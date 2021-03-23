@@ -1,10 +1,23 @@
-use std::io;
 use rand::Rng;
 use std::cmp::Ordering;
+use std::io;
 
 fn main() {
-    println!("Hello, world!");
-    let secret_number = rand::thread_rng().gen_range(1,101);
+    // println!("Hello, world!");
+    // guessing_game();
+    variables();
+}
+
+fn print_title(title: &str) {
+    println!("-------------------------");
+    println!("{}", title);
+    println!("-------------------------");
+}
+
+fn guessing_game() {
+    let title = "Guessing Game";
+    print_title(title);
+    let secret_number = rand::thread_rng().gen_range(1, 101);
     println!("Guess the number!");
     loop {
         println!("Please input your guess.");
@@ -22,14 +35,22 @@ fn main() {
 
         println!("You guessed: {}", guess);
 
-
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
             Ordering::Equal => {
                 println!("You win!");
                 break;
-            },
+            }
         }
     }
+}
+
+fn variables() {
+    let title = "Variables";
+    print_title(title);
+    let mut x = 5;
+    println!("The value of x is {}", x);
+    x = 6;
+    println!("The value of x is {}", x);
 }
