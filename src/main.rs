@@ -53,4 +53,18 @@ fn variables() {
     println!("The value of x is {}", x);
     x = 6;
     println!("The value of x is {}", x);
+
+    //Shadowing
+    let z = 5;
+    let z = z + 5;
+    let z = z * 2;
+    println!("{}", z);
+
+    //Tuples
+    let tup = (500, 6.4, 1);
+    let (x,y,z) = tup;
+    println!("The value of y is: {}", y);
+    println!("The value of z is: {}", tup.2)
+
+
 }
